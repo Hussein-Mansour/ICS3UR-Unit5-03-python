@@ -5,89 +5,53 @@
 # This program takes the level to grade and returns the middle percentage mark
 
 
-def percentage_mark(percentage_int):
+def level(percentage_str):
     # this function checks Which answer and prints it
     # process & output
-    if percentage_int == 4:
-        print(
-            "\nlevel {0} has a middle percentage of 90%".format(percentage_int)
-            )
-    elif percentage_int == 3:
-        print(
-            "\nlevel {0} has a middle percentage of 74%".format(percentage_int)
-            )
-    elif percentage_int == 2:
-        print(
-            "\nlevel {0} has a middle percentage of 64%".format(percentage_int)
-            )
-    elif percentage_int == 1:
-        print(
-            "\nlevel {0} has a middle percentage of 54%".format(percentage_int)
-            )
-    return percentage_int
 
+    if percentage_str == "4":
+        percentage_str = 90
+    elif percentage_str == "3":
+        percentage_str = 75
+    elif percentage_str == "2":
+        percentage_str = 64
+    elif percentage_str == "1":
+        percentage_str = 54
+    elif percentage_str == "4+":
+        percentage_str = 97
+    elif percentage_str == "4-":
+        percentage_str = 84
+    elif percentage_str == "3+":
+        percentage_str = 78
+    elif percentage_str == "3-":
+        percentage_str = 71
+    elif percentage_str == "2+":
+        percentage_str = 68
+    elif percentage_str == "2-":
+        percentage_str = 61
+    elif percentage_str == "1+":
+        percentage_str = 58
+    elif percentage_str == "1-":
+        percentage_str = 51
+    elif percentage_str == "R":
+        percentage_str = 49
 
-def level(level_from_user):
-    # this function checks Which answer and prints it
-    # process & output
-    if level_from_user == "4+":
-        print(
-            "\nlevel {0} has a middle percentage of 97%"
-            .format(level_from_user)
-            )
-    elif level_from_user == "4-":
-        print(
-            "\nlevel {0} has a middle percentage of 84%"
-            .format(level_from_user)
-            )
-    elif level_from_user == "3+":
-        print(
-            "\nlevel {0} has a middle percentage of 78%"
-            .format(level_from_user)
-            )
-    elif level_from_user == "3-":
-        print(
-            "\nlevel {0} has a middle percentage of 71%"
-            .format(level_from_user)
-            )
-    elif level_from_user == "2+":
-        print(
-            "\nlevel {0} has a middle percentage of 68%"
-            .format(level_from_user)
-            )
-    elif level_from_user == "2-":
-        print(
-            "\nlevel {0} has a middle percentage of 61%"
-            .format(level_from_user)
-            )
-    elif level_from_user == "1+":
-        print(
-            "\nlevel {0} has a middle percentage of 58%"
-            .format(level_from_user)
-            )
-    elif level_from_user == "1-":
-        print(
-            "\nlevel {0} has a middle percentage of 51%".
-            format(level_from_user)
-            )
-    elif level_from_user == "R":
-        print(
-            "\nlevel {0} has a middle percentage of 0% - 49%"
-            .format(level_from_user)
-            )
-    return level_from_user
+    return percentage_str
 
 
 def main():
-    # this function gets length and width
+    # this function this function call other functions
     # input
     level_from_user = input(
         "Enter the level you want converted to a percentage: ")
-    level(level_from_user)
     try:
-        percentage_int = int(level_from_user)
+        percentage_str = level_from_user
         # call function
-        percentage_mark(percentage_int)
+        some_var = level(percentage_str)
+        print(
+            "\nlevel {0} has a middle percentage of {1}%"
+            .format(level_from_user, some_var)
+            )
     except Exception:
         print("\nInvalid Input!")
     finally:
